@@ -1,0 +1,60 @@
+<!-- activity_discipline.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+    <RelativeLayout
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/background">
+        <ImageButton
+            android:id="@+id/buttonBack"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:background="@drawable/background_back"/>
+
+        <TextView
+            android:id="@+id/name_discipline"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="65dp"
+            android:gravity="center_vertical"
+            android:text="Называние предмета"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="italic" />
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/rating_plans"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="15dp"
+        android:layout_below="@+id/back"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp" />
+        <TextView
+            android:id="@+id/sumBall"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/back"
+            android:gravity="right"
+            android:text="Количество баллов: 0.0 / 100.0"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/back" />
+    </LinearLayout>
+
+</RelativeLayout>

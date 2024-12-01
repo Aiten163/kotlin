@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.fragments.HomeFragment"
+    android:id="@+id/root_home">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+
+        <FrameLayout
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="225dp"
+            android:background="@drawable/background">
+
+            <ImageView
+                android:id="@+id/iv_avatar"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="175dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="175dp"
+                android:background="@drawable/white_background"
+                />
+            <ImageView
+                android:id="@+id/r_b"
+                android:layout_width="155dp"
+                android:layout_height="155dp"
+                android:layout_marginStart="145dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="37.5dp"
+                android:layout_marginEnd="145dp"
+                android:background="@drawable/white_background"/>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_name_student"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="230dp"
+            android:gravity="center"
+            android:text="ФИО"
+            android:textStyle="italic"
+            android:textColor="@color/black"
+            android:textSize="25dp" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="280dp"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivAvatarUser">
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_weight="1"
+                    android:background="#1C000000"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp">
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="Дата рождения"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/BirthDateUser"
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center"
+                        android:text="04.06.2003"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_weight="1"
+                    android:background="#0F000000"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/title_cod"
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="ID"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/studentCodUser"
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center"
+                        android:text="000080681"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_weight="1"
+                    android:background="#1C000000"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp">
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="Курс"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/CourseUser"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center"
+                        android:text="Третий"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_weight="1"
+                    android:background="#0F000000"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp">
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="Факультет/Институт"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/FacultyUser"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center"
+                        android:text="Факультет математики и информационных технологий"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_weight="1"
+                    android:background="#1C000000"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp">
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="Направление"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/DirectionUser"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center"
+                        android:text="Фундаментальная информатика и информационные технологии"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_weight="1"
+                    android:background="#0F000000"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dp">
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="Почта"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/EmailUser"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center"
+                        android:text="kras.nik.040603@gmail.com"
+                        android:textColor="@color/black"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+<!--            <Button-->
+<!--                android:id="@+id/b_logout"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center_horizontal"-->
+<!--                android:text="Выход"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:background="@drawable/button_background"-->
+<!--                />-->
+                <Button
+                    android:id="@+id/b_logout"
+                    android:textAllCaps="false"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/button_background"
+                    app:backgroundTint="@null"
+                    android:text="Выход"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:layout_marginVertical="20dp"
+                    android:textSize="16sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
