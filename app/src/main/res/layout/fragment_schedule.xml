@@ -23,13 +23,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="10dp">
-    <CalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:focusedByDefault="true"
-        />
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="376dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:focusedByDefault="true" />
 
     <TableLayout
         android:id="@+id/name_raw"

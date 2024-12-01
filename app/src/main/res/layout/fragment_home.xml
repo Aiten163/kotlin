@@ -100,7 +100,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:gravity="center"
-                        android:text="04.06.2003"
+                        android:text="23.05.2004"
                         android:textColor="@color/black"
                         android:layout_gravity="center"
                         android:textSize="18dp"

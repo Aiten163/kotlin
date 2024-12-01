@@ -29,31 +29,26 @@
                     android:gravity="center"
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp"
-                    android:text="НИ МГУ им. Н.П.Огарева"
-                    android:textStyle="italic"
-                    android:textColor="@color/white"
+                    android:text="ЭИОС Mobile"
+                    android:textStyle="bold"
+                    android:textColor="@color/orange"
                     android:textSize="28dp" />
             </FrameLayout>
-            <ImageView
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:src="@drawable/mrsu_white"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
 
             <EditText
+                android:layout_marginTop="100dp"
                 android:id="@+id/et_email"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="80dp"
                 android:background="@drawable/view_border"
-                android:hint="Логин"
+                android:hint="Логин(ИвановИИ)"
                 android:padding="15dp"
                 android:paddingEnd="15dp"
                 android:textColor="@color/white"
-                android:textColorHint="#90ffffff"
-                android:textSize="16sp"
-                android:drawableRight="@drawable/baseline_person_24"/>
+                android:textStyle="bold"
+                android:textColorHint="#90FFFFFF"
+                android:textSize="16sp" />
+
             <TextView
                 android:id="@+id/login_error"
                 android:layout_width="match_parent"
@@ -62,9 +57,11 @@
                 android:textColor="#B30707"
                 android:textSize="16dp"/>
             <EditText
+                android:inputType="textPassword"
                 android:id="@+id/et_password"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="80dp"
+                android:textStyle="bold"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/view_border"
                 android:hint="Пароль"
@@ -72,8 +69,7 @@
                 android:paddingEnd="15dp"
                 android:textColor="@color/white"
                 android:textColorHint="#90ffffff"
-                android:textSize="16sp"
-                android:drawableRight="@drawable/baseline_lock_24"/>
+                android:textSize="16sp" />
             <TextView
                 android:id="@+id/password_error"
                 android:layout_width="match_parent"
@@ -85,38 +81,16 @@
                 android:id="@+id/b_signin"
                 android:textAllCaps="false"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="70dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/button_background"
                 app:backgroundTint="@null"
-                android:text="Войти"
+                android:text="Вход"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:layout_marginVertical="20dp"
                 android:textSize="16sp" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginBottom="0dp"
-            android:gravity="right|bottom"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAlignment="textEnd"
-                android:text="Забыли пароль?"
-                android:textColor="@color/white"/>
-            <TextView
-                android:id="@+id/tv_signup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAlignment="textEnd"
-                android:text="Восстановить"
-                android:layout_marginLeft="10dp"
-                android:textStyle="bold"
-                android:textColor="@color/white"/>
-        </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

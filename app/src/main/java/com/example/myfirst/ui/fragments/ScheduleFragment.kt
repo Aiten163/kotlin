@@ -24,25 +24,22 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 class ScheduleFragment : Fragment() {
-    private lateinit var binding:FragmentScheduleBinding
+    private lateinit var binding: FragmentScheduleBinding
     private lateinit var myAdapter: ScheduleAdapter
-    private lateinit var scheduleMvvm:ScheduleFragMVVM
+    private lateinit var scheduleMvvm: ScheduleFragMVVM
     private lateinit var sPref: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         myAdapter = ScheduleAdapter()
         sPref = requireContext().getSharedPreferences("MyPref", AppCompatActivity.MODE_PRIVATE)
-        scheduleMvvm = ViewModelProvider(this,
-            ScheduleCustomFactory(sPref.getString("saved_token", "").toString()))[ScheduleFragMVVM::class.java]
+        scheduleMvvm = ViewModelProvider(this, ScheduleCustomFactory(sPref.getString("saved_token", "").toString()))[ScheduleFragMVVM::class.java]
     }
 
-    override fun onCreateView(inflater: LayoutInflater,
-                              container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentScheduleBinding.inflate(inflater,container,false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = FragmentScheduleBinding.inflate(inflater, container, false)
         return binding.root
     }
-
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -66,23 +63,22 @@ class ScheduleFragment : Fragment() {
     }
 
     private fun onScheduleClick() {
-        //myAdapter.onItemClicked(object : ScheduleAdapter.OnItemScheduleClicked{
-        //     override fun onClickListener(schedule: Schedule) {
-        //         val intent = Intent(context, MealActivity::class.java)
-        //         intent.putExtra(CATEGORY_NAME,category.strCategory)
-        //         startActivity(intent)
-        //     }
+        // myAdapter.onItemClicked(object : ScheduleAdapter.OnItemScheduleClicked {
+        //    override fun onClickListener(schedule: Schedule) {
+        //        val intent = Intent(context, MealActivity::class.java)
+        //        intent.putExtra(CATEGORY_NAME, category.strCategory)
+        //        startActivity(intent)
+        //    }
         // })
     }
 
     private fun observeSchedule() {
-        scheduleMvvm.observeSchedule().observe(viewLifecycleOwner, object : Observer<Schedule?> {
-            override fun onChanged(t: Schedule?) {
-                if (!t!!.isEmpty()) {
-                    myAdapter.setScheduleList(t[0].TimeTable.Lessons)
-                } else {
-                    Toast.makeText(requireContext().applicationContext, "No lesson this day", Toast.LENGTH_SHORT).show()
-                }
+        scheduleMvvm.observeSchedule().observe(viewLifecycleOwner, Observer { lessons ->
+            if (lessons != null && lessons.isNotEmpty()) {
+                // Обновление адаптера с новым списком уроков
+                myAdapter.setScheduleList(lessons)
+            } else {
+                Toast.makeText(requireContext().applicationContext, "No lesson this day", Toast.LENGTH_SHORT).show()
             }
         })
     }
@@ -90,7 +86,7 @@ class ScheduleFragment : Fragment() {
     private fun prepareRecyclerView() {
         binding.recyclerViewSchedule.apply {
             adapter = myAdapter
-            layoutManager = LinearLayoutManager(requireContext()) //GridLayoutManager(context,3, GridLayoutManager.VERTICAL,false)
+            layoutManager = LinearLayoutManager(requireContext())
         }
     }
 }
