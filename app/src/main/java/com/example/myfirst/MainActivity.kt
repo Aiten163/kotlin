@@ -15,26 +15,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
-          val navController = findNavController(R.id.nav_host_fragment_activity_main)
+        val navController = findNavController(R.id.nav_host_fragment_activity_main)
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_home,
-                R.id.navigation_schedule,
-                //R.id.navigation_hub
+                R.id.navigation_schedule
             )
         )
-        //setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-
-        /*val bundle = Bundle()
-        bundle.putString("user", intent.getStringExtra("user"))
-
-        val homeFragment = HomeFragment()
-        homeFragment.arguments = bundle
-
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.container, homeFragment)
-            .commit()*/
     }
 }

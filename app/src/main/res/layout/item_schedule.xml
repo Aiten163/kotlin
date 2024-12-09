@@ -1,0 +1,35 @@
+<!-- item_schedule.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Номер урока -->
+    <TextView
+        android:id="@+id/lessonNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="№" />
+
+    <!-- Название дисциплины -->
+    <TextView
+        android:id="@+id/lessonSubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Дисциплина" />
+
+    <!-- Кабинет -->
+    <TextView
+        android:id="@+id/lessonRoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Кабинет" />
+
+    <!-- Преподаватель -->
+    <TextView
+        android:id="@+id/lessonTeacher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Преподаватель" />
+</LinearLayout>

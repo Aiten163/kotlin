@@ -8,11 +8,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/background"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        android:text="Название раздела"
         android:gravity="center"
-        android:padding="8dp" />
+        android:padding="8dp"
+        android:text="Название раздела"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewСontrolPoint"

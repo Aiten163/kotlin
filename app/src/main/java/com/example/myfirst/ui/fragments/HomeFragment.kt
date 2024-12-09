@@ -87,8 +87,6 @@ class HomeFragment : Fragment() {
                     binding.FacultyUser.text = faculty
                     val specialty = value.RecordBooks[0].Specialty
                     binding.DirectionUser.text = specialty
-                    val emailUs = value.Email
-                    binding.EmailUser.text = emailUs
                     cancelLoadingCase(context)
                 }else{
                     cancelLoadingCase(context)
