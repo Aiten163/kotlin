@@ -62,22 +62,14 @@ class ScheduleFragment : Fragment() {
         }
     }
 
-    private fun onScheduleClick() {
-        // myAdapter.onItemClicked(object : ScheduleAdapter.OnItemScheduleClicked {
-        //    override fun onClickListener(schedule: Schedule) {
-        //        val intent = Intent(context, MealActivity::class.java)
-        //        intent.putExtra(CATEGORY_NAME, category.strCategory)
-        //        startActivity(intent)
-        //    }
-        // })
-    }
-
     private fun observeSchedule() {
         scheduleMvvm.observeSchedule().observe(viewLifecycleOwner, Observer { lessons ->
             if (lessons != null && lessons.isNotEmpty()) {
                 // Обновление адаптера с новым списком уроков
                 myAdapter.setScheduleList(lessons)
             } else {
+                // Очистка списка в адаптере, если уроков нет
+                myAdapter.clearScheduleList()
                 Toast.makeText(requireContext().applicationContext, "No lesson this day", Toast.LENGTH_SHORT).show()
             }
         })
@@ -89,4 +81,15 @@ class ScheduleFragment : Fragment() {
             layoutManager = LinearLayoutManager(requireContext())
         }
     }
+
+    private fun onScheduleClick() {
+        // myAdapter.onItemClicked(object : ScheduleAdapter.OnItemScheduleClicked {
+        //    override fun onClickListener(schedule: Schedule) {
+        //        val intent = Intent(context, MealActivity::class.java)
+        //        intent.putExtra(CATEGORY_NAME, category.strCategory)
+        //        startActivity(intent)
+        //    }
+        // })
+    }
 }
+

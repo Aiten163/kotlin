@@ -19,6 +19,12 @@ class ScheduleAdapter : RecyclerView.Adapter<ScheduleAdapter.ViewHolder>() {
         notifyDataSetChanged()
     }
 
+    // Метод для очистки списка
+    fun clearScheduleList() {
+        scheduleList = emptyList()  // Очищаем список
+        notifyDataSetChanged()  // Обновляем RecyclerView
+    }
+
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textOrder: TextView = itemView.findViewById(R.id.textOrder)
         val textLesson: TextView = itemView.findViewById(R.id.textLesson)
@@ -33,15 +39,28 @@ class ScheduleAdapter : RecyclerView.Adapter<ScheduleAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = scheduleList[position]
-        holder.textOrder.text = item.Number.toString()
-        holder.textLesson.text = item.Disciplines[0].Title
-        holder.textAuditorium.text = item.Disciplines[0].Auditorium.Number
-        holder.textTeacher.text = item.Disciplines[0].Teacher.FIO
+        if (scheduleList.isNotEmpty()) {
+            val item = scheduleList[position]
+            holder.textOrder.text = item.Number.toString()
+            holder.textLesson.text = item.Disciplines[0].Title
+            holder.textAuditorium.text = item.Disciplines[0].Auditorium.Number
+            holder.textTeacher.text = item.Disciplines[0].Teacher.FIO
+        } else {
+            // В случае пустого списка можно очистить значения или показать "нет данных"
+            holder.textOrder.text = "-"
+            holder.textLesson.text = "-"
+            holder.textAuditorium.text = "-"
+            holder.textTeacher.text = "-"
+        }
     }
 
     override fun getItemCount(): Int {
-        return scheduleList.size
+        return if (scheduleList.isNotEmpty()) {
+            scheduleList.size
+        } else {
+            // Показываем один элемент для пустого расписания, если хотите сделать сообщение
+            1
+        }
     }
 
     interface OnItemScheduleClicked{
@@ -53,6 +72,6 @@ class ScheduleAdapter : RecyclerView.Adapter<ScheduleAdapter.ViewHolder>() {
     }
 
     interface OnLongCategoryClick{
-        fun onCategoryLongCLick(schedule:Schedule)
+        fun onCategoryLongCLick(schedule: Schedule)
     }
 }
