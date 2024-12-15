@@ -3,5 +3,7 @@
     <string name="title_home">Профиль</string>
     <string name="title_schedule">Расписание</string>
     <string name="title_hub">Образование</string>
+    <string name="sample_news_content">Добро пожаловать на страницу новостей! Здесь вы найдете самую свежую информацию.</string>
+    <string name="news_title">Новости</string>
 
 </resources>
